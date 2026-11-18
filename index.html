@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pauta de Criativos</title>
+<style>
+  :root{
+    --bg:#f4f7f3; --card:#ffffff; --ink:#1c2a22; --muted:#5d6b61;
+    --line:#e3eadf; --sky:#2b9fd6; --sky-ink:#0d6d9c;
+    --sun:#f3a712; --grass:#3f9b4f; --grass-ink:#2c7439;
+    --warm:#fff6e6; --shadow:0 6px 24px rgba(28,42,34,.08);
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --bg:#121712; --card:#1b221b; --ink:#e9efe7; --muted:#9fb0a2;
+      --line:#2b352b; --sky:#4fb6e6; --sky-ink:#8fd3f2; --sun:#f6bb4a;
+      --grass:#5bc06d; --grass-ink:#9ee3a8; --warm:#2a2515; --shadow:0 6px 24px rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#121712; --card:#1b221b; --ink:#e9efe7; --muted:#9fb0a2;
+    --line:#2b352b; --sky:#4fb6e6; --sky-ink:#8fd3f2; --sun:#f6bb4a;
+    --grass:#5bc06d; --grass-ink:#9ee3a8; --warm:#2a2515; --shadow:0 6px 24px rgba(0,0,0,.35);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:900px;margin:0 auto;padding:28px 16px 64px}
+  header.hero{background:linear-gradient(135deg,var(--grass) 0%,var(--sky) 100%);
+    color:#fff;border-radius:22px;padding:30px 26px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+  header.hero::after{content:"🎬";position:absolute;right:18px;top:14px;font-size:64px;opacity:.22}
+  .kicker{font-size:13px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;opacity:.9}
+  header.hero h1{margin:.2em 0 .15em;font-size:30px;line-height:1.1}
+  header.hero p{margin:0;max-width:62ch;font-size:16px;opacity:.96}
+  .banner{background:var(--warm);border:1px solid var(--line);border-left:5px solid var(--sun);
+    border-radius:12px;padding:15px 17px;margin:22px 0;font-size:15px}
+  .banner b{color:var(--sun)}
+  h2{font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:30px 0 12px;font-weight:700}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 20px 18px;
+    box-shadow:var(--shadow);margin-bottom:16px;position:relative}
+  .card .num{position:absolute;top:-10px;left:18px;background:var(--grass);color:#fff;font-weight:800;
+    font-size:13px;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;box-shadow:var(--shadow)}
+  .card h3{margin:6px 0 4px;font-size:20px;display:flex;align-items:center;gap:9px}
+  .card .em{font-size:23px}
+  .why{font-size:14px;color:var(--muted);margin:0 0 12px;background:var(--bg);border-radius:9px;padding:9px 12px;
+    border:1px solid var(--line)}
+  .why b{color:var(--grass-ink)}
+  .card ul{margin:0;padding-left:20px}
+  .card li{margin:5px 0;font-size:15px}
+  .pill{display:inline-block;font-size:12px;font-weight:700;color:#fff;background:var(--sun);
+    border-radius:999px;padding:3px 10px;margin-left:4px;vertical-align:middle}
+  .specs{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+  .spec{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:14px 16px;box-shadow:var(--shadow)}
+  .spec b{display:block;color:var(--sky-ink);font-size:15px;margin-bottom:3px}
+  .spec span{font-size:13.5px;color:var(--muted)}
+  .cad{background:linear-gradient(135deg,var(--sun) 0%,var(--grass) 100%);color:#fff;border-radius:16px;
+    padding:20px 22px;box-shadow:var(--shadow);margin-top:10px}
+  .cad h3{margin:0 0 6px;font-size:19px}
+  .cad p{margin:0;font-size:15px;opacity:.96}
+  footer{margin-top:40px;text-align:center;color:var(--muted);font-size:13px}
+  @media(max-width:560px){header.hero h1{font-size:25px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="kicker">Spitz Pomer · Pauta de produção</div>
+    <h1>Os criativos que a gente quer</h1>
+    <p>Criativo novo é o que mais move o resultado e o que mais destrava a entrega das campanhas. Aqui está, em ordem de prioridade, o que precisamos que vocês produzam, com o porquê e o formato certo pra render.</p>
+  </header>
+
+  <div class="banner">
+    <b>Prioridade agora:</b> estamos na semana do feriado (20/11) e na Black November. O que mais urge é a leva 1 (oferta) e a leva 2 (clima do fim de semana). Quanto antes, melhor.
+  </div>
+
+  <h2>O que produzir, por prioridade</h2>
+
+  <div class="card">
+    <div class="num">1</div>
+    <h3><span class="em">🎟️</span> Oferta e Black November <span class="pill">top vendas</span></h3>
+    <p class="why">Os criativos de <b>preço e cupom são os que mais vendem</b> na conta: "de R$104 por R$64" fez 293 vendas, "compre antecipado" fez 234 vendas com retorno de 26x, e o cupom aventureiro, 275 vendas.</p>
+    <ul>
+      <li>Vídeos curtos batendo no <b>desconto da Black November</b>, com âncora de preço ("de X por Y").</li>
+      <li>Senso de urgência ("só até…", "últimos dias").</li>
+      <li>Ideia do "compre antecipado e garanta o seu" (um dos maiores retornos da conta).</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="num">2</div>
+    <h3><span class="em">🌤️</span> Clima do fim de semana <span class="pill">toda semana</span></h3>
+    <p class="why">É o tema que mais se renova e <b>sempre performa</b>. Precisamos de material novo a cada semana, casado com a previsão real.</p>
+    <ul>
+      <li>Dia de sol: "o céu deu o sinal, bora sair de casa".</li>
+      <li>Dia de chuva: "tem área coberta, o parque funciona" (pouco explorado, tem espaço).</li>
+      <li>"A previsão é de aventura", usando o gráfico de tempo na tela.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="num">3</div>
+    <h3><span class="em">📅</span> Feriado e férias de dezembro</h3>
+    <p class="why">Datas sempre vendem bem e criam urgência natural. O feriado de 20/11 agora, e dezembro/férias logo à frente.</p>
+    <ul>
+      <li>"Feriado sem plano? Vem pro Spitz."</li>
+      <li>"Férias de dezembro": o parque como o programa das crianças.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="num">4</div>
+    <h3><span class="em">🎢</span> Atração por dentro e adrenalina</h3>
+    <p class="why">Mostrar a experiência vende: "adrenalina garantida" fez 142 vendas (retorno 13x) e o combo de atrações, 118 vendas.</p>
+    <ul>
+      <li>POV de quem está na <b>tirolesa</b> e no <b>tubing</b> (câmera na pessoa).</li>
+      <li>Cada atração forte em destaque, uma por vídeo.</li>
+      <li>Novidades do parque, o que mudou, o que é novo.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="num">5</div>
+    <h3><span class="em">💬</span> Depoimento, UGC e Mirelle</h3>
+    <p class="why">Prova social converte. Vídeos de gente real e os conteúdos com a Mirelle têm bom retorno.</p>
+    <ul>
+      <li>Depoimentos curtos de visitantes ("o que achou?", reação na hora).</li>
+      <li>Mais conteúdo com a Mirelle apresentando o parque.</li>
+      <li>Família curtindo junta, do radical ao tranquilo.</li>
+    </ul>
+  </div>
+
+  <h2>Regras técnicas (o que faz render)</h2>
+  <div class="specs">
+    <div class="spec"><b>Vertical 9:16</b><span>Feito pra Reels e Stories, que é onde a entrega acontece.</span></div>
+    <div class="spec"><b>Hook nos 3 primeiros segundos</b><span>Prende logo de cara, senão a pessoa passa.</span></div>
+    <div class="spec"><b>Legenda na tela</b><span>Dobra a retenção na conta. Texto grande e legível.</span></div>
+    <div class="spec"><b>Em lotes de 3 a 5</b><span>Quanto mais criativo novo girando, mais as campanhas conseguem entregar.</span></div>
+    <div class="spec"><b>Duração curta</b><span>Direto ao ponto, variando versões de 10 a 30 segundos.</span></div>
+    <div class="spec"><b>Imagem limpa</b><span>Foco nas atrações e nas pessoas se divertindo.</span></div>
+  </div>
+
+  <div class="cad" style="margin-top:16px">
+    <h3>A cadência ideal</h3>
+    <p>Um lote novo (3 a 5 vídeos) por semana mantém as campanhas sempre com material fresco. É o que vai sustentar e aumentar as vendas daqui pra frente. O criativo é o combustível: sem material novo, a entrega satura e o resultado cai.</p>
+  </div>
+
+  <footer>Pauta de produção de criativos · Spitz Pomer</footer>
+</div>
+</body>
+</html>
