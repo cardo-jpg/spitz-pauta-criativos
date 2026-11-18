@@ -1,179 +1,252 @@
-<!doctype html>
-<html lang="pt-BR">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="claude:viewport-fit-sides" content="cover">
 <title>Pauta de Criativos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap">
 <style>
+  /* Layout: pine-green brand hero; cream reading column; priority items as a numbered
+     editorial list; real creative refs as framed figures; specs grid; cadence band. */
   :root{
-    --bg:#f4f7f3; --card:#ffffff; --ink:#1c2a22; --muted:#5d6b61;
-    --line:#e3eadf; --sky:#2b9fd6; --sky-ink:#0d6d9c;
-    --sun:#f3a712; --grass:#3f9b4f; --grass-ink:#2c7439;
-    --warm:#fff6e6; --shadow:0 6px 24px rgba(28,42,34,.08);
+    --bg:#f6f2e9; --surface:#ffffff; --ink:#15241c; --muted:#5b6b60; --line:#e6e1d3;
+    --pine:#123d2b; --pine-ink:#f3f0e6; --orange:#c75f12; --orange-ink:#9a4409;
+    --orange-soft:#eaa355; --chip:#efe9db; --shadow:0 10px 30px rgba(18,61,43,.09);
+    --display:"Space Grotesk",system-ui,sans-serif;
+    --body:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
   }
   @media (prefers-color-scheme:dark){
     :root:not([data-theme="light"]){
-      --bg:#121712; --card:#1b221b; --ink:#e9efe7; --muted:#9fb0a2;
-      --line:#2b352b; --sky:#4fb6e6; --sky-ink:#8fd3f2; --sun:#f6bb4a;
-      --grass:#5bc06d; --grass-ink:#9ee3a8; --warm:#2a2515; --shadow:0 6px 24px rgba(0,0,0,.35);
+      --bg:#10150f; --surface:#19201a; --ink:#edf1e9; --muted:#9bac9f; --line:#2a332a;
+      --pine:#14402e; --pine-ink:#f3f0e6; --orange:#e2832f; --orange-ink:#f0b878;
+      --orange-soft:#f0b878; --chip:#232c23; --shadow:0 10px 30px rgba(0,0,0,.4); color-scheme:dark;
     }
   }
   :root[data-theme="dark"]{
-    --bg:#121712; --card:#1b221b; --ink:#e9efe7; --muted:#9fb0a2;
-    --line:#2b352b; --sky:#4fb6e6; --sky-ink:#8fd3f2; --sun:#f6bb4a;
-    --grass:#5bc06d; --grass-ink:#9ee3a8; --warm:#2a2515; --shadow:0 6px 24px rgba(0,0,0,.35);
+    --bg:#10150f; --surface:#19201a; --ink:#edf1e9; --muted:#9bac9f; --line:#2a332a;
+    --pine:#14402e; --pine-ink:#f3f0e6; --orange:#e2832f; --orange-ink:#f0b878;
+    --orange-soft:#f0b878; --chip:#232c23; --shadow:0 10px 30px rgba(0,0,0,.4); color-scheme:dark;
   }
   *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--ink);
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    line-height:1.5;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:900px;margin:0 auto;padding:28px 16px 64px}
-  header.hero{background:linear-gradient(135deg,var(--grass) 0%,var(--sky) 100%);
-    color:#fff;border-radius:22px;padding:30px 26px;box-shadow:var(--shadow);position:relative;overflow:hidden}
-  header.hero::after{content:"🎬";position:absolute;right:18px;top:14px;font-size:64px;opacity:.22}
-  .kicker{font-size:13px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;opacity:.9}
-  header.hero h1{margin:.2em 0 .15em;font-size:30px;line-height:1.1}
-  header.hero p{margin:0;max-width:62ch;font-size:16px;opacity:.96}
-  .banner{background:var(--warm);border:1px solid var(--line);border-left:5px solid var(--sun);
-    border-radius:12px;padding:15px 17px;margin:22px 0;font-size:15px}
-  .banner b{color:var(--sun)}
-  h2{font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:30px 0 12px;font-weight:700}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 20px 18px;
-    box-shadow:var(--shadow);margin-bottom:16px;position:relative}
-  .card .num{position:absolute;top:-10px;left:18px;background:var(--grass);color:#fff;font-weight:800;
-    font-size:13px;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;box-shadow:var(--shadow)}
-  .card h3{margin:6px 0 4px;font-size:20px;display:flex;align-items:center;gap:9px}
-  .card .em{font-size:23px}
-  .why{font-size:14px;color:var(--muted);margin:0 0 12px;background:var(--bg);border-radius:9px;padding:9px 12px;
-    border:1px solid var(--line)}
-  .why b{color:var(--grass-ink)}
-  .card ul{margin:0;padding-left:20px}
-  .card li{margin:5px 0;font-size:15px}
-  .refs{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
-  .refs .lbl{width:100%;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:700}
-  .reflink{display:inline-flex;align-items:center;gap:5px;font-size:12.5px;font-weight:600;text-decoration:none;
-    color:var(--sky-ink);background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:5px 11px}
-  .reflink:hover{border-color:var(--sky)}
-  .refimg{margin:0;max-width:280px}
-  .refimg img{width:100%;border-radius:12px;display:block;border:1px solid var(--line)}
-  .refimg figcaption{font-size:12.5px;color:var(--muted);margin-top:7px;line-height:1.45}
-  .pill{display:inline-block;font-size:12px;font-weight:700;color:#fff;background:var(--sun);
-    border-radius:999px;padding:3px 10px;margin-left:4px;vertical-align:middle}
-  .specs{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
-  .spec{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:14px 16px;box-shadow:var(--shadow)}
-  .spec b{display:block;color:var(--sky-ink);font-size:15px;margin-bottom:3px}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);
+    line-height:1.55;-webkit-font-smoothing:antialiased;font-size:16px}
+  .wrap{max-width:860px;margin:0 auto;
+    padding-left:max(18px,env(safe-area-inset-left,0px));
+    padding-right:max(18px,env(safe-area-inset-right,0px));
+    padding-block:26px 60px}
+  h1,h2,h3,.eyebrow,.num,.stat b{font-family:var(--display)}
+
+  /* hero */
+  .hero{background:var(--pine);color:var(--pine-ink);border-radius:20px;
+    padding:38px 32px 34px;position:relative;overflow:hidden;box-shadow:var(--shadow)}
+  .hero::before{content:"";position:absolute;inset:0 0 auto 0;height:5px;background:var(--orange)}
+  .brand{font-family:var(--display);font-weight:700;letter-spacing:.18em;font-size:12.5px;
+    text-transform:uppercase;opacity:.85;margin-bottom:20px}
+  .hero h1{margin:0;font-size:clamp(30px,6vw,46px);line-height:1.04;font-weight:700;
+    letter-spacing:-.02em;text-wrap:balance;max-width:16ch}
+  .hero h1 em{font-style:normal;color:var(--orange-soft)}
+  .hero p{margin:18px 0 0;font-size:16.5px;max-width:52ch;opacity:.92}
+
+  /* intro / priority banner */
+  .lead{display:flex;gap:14px;align-items:flex-start;margin:26px 2px 8px;
+    border-left:3px solid var(--orange);padding:4px 0 4px 16px}
+  .lead p{margin:0;font-size:15.5px;color:var(--muted)}
+  .lead b{color:var(--ink)}
+
+  .section-label{font-family:var(--display);font-weight:700;font-size:12.5px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--muted);margin:38px 2px 16px}
+
+  /* priority items */
+  .item{background:var(--surface);border:1px solid var(--line);border-radius:16px;
+    box-shadow:var(--shadow);margin-bottom:16px;overflow:hidden}
+  .item-in{display:grid;grid-template-columns:58px 1fr;gap:4px 20px;padding:22px 24px}
+  .num{grid-row:1/3;font-size:34px;font-weight:700;color:var(--orange);line-height:1;
+    font-variant-numeric:tabular-nums}
+  .eyebrow{font-family:var(--display);font-weight:600;font-size:11.5px;letter-spacing:.13em;
+    text-transform:uppercase;color:var(--muted)}
+  .item h3{margin:3px 0 0;font-size:21px;font-weight:600;letter-spacing:-.01em;display:flex;
+    align-items:center;gap:10px;flex-wrap:wrap}
+  .tag{font-family:var(--display);font-size:11px;font-weight:600;letter-spacing:.04em;
+    color:var(--orange-ink);background:var(--chip);border-radius:999px;padding:3px 10px}
+  .item-body{grid-column:2}
+  .why{font-size:14.5px;color:var(--muted);margin:12px 0 14px}
+  .why b{color:var(--ink)}
+  .why .big{color:var(--orange-ink);font-family:var(--display);font-weight:700}
+  .item ul{margin:0;padding-left:18px}
+  .item li{margin:6px 0;font-size:15.5px}
+  .item li b{font-weight:600}
+
+  /* reference figure */
+  .ref{grid-column:2;margin-top:16px;padding-top:16px;border-top:1px solid var(--line);
+    display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap}
+  .ref .cap{font-family:var(--display);font-weight:600;font-size:11px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--muted);width:100%;margin-bottom:-4px}
+  .ref img{width:150px;max-width:40vw;border-radius:11px;border:1px solid var(--line);display:block}
+  .ref figcaption{flex:1;min-width:180px;font-size:14px;color:var(--muted);line-height:1.5}
+  .ref figure{margin:0;display:contents}
+  .reflink{display:inline-flex;align-items:center;gap:7px;font-family:var(--display);font-weight:600;
+    font-size:14px;text-decoration:none;color:var(--surface);background:var(--pine);
+    border-radius:10px;padding:10px 16px}
+  .reflink:hover{background:var(--orange)}
+
+  /* specs */
+  .specs{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;
+    background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .spec{background:var(--surface);padding:18px 20px}
+  .spec b{display:block;font-family:var(--display);font-weight:600;font-size:15px;margin-bottom:4px}
   .spec span{font-size:13.5px;color:var(--muted)}
-  .cad{background:linear-gradient(135deg,var(--sun) 0%,var(--grass) 100%);color:#fff;border-radius:16px;
-    padding:20px 22px;box-shadow:var(--shadow);margin-top:10px}
-  .cad h3{margin:0 0 6px;font-size:19px}
-  .cad p{margin:0;font-size:15px;opacity:.96}
+
+  /* cadence */
+  .cadence{background:var(--pine);color:var(--pine-ink);border-radius:16px;padding:26px 28px;
+    margin-top:18px;box-shadow:var(--shadow)}
+  .cadence .eyebrow{color:var(--orange-soft);opacity:.95}
+  .cadence h3{margin:6px 0 8px;font-size:20px;font-weight:600;color:var(--pine-ink)}
+  .cadence p{margin:0;font-size:15.5px;opacity:.92;max-width:60ch}
+
   footer{margin-top:40px;text-align:center;color:var(--muted);font-size:13px}
-  @media(max-width:560px){header.hero h1{font-size:25px}}
+
+  @media(max-width:520px){
+    .hero{padding:30px 22px}
+    .item-in{grid-template-columns:44px 1fr;padding:20px 18px;gap:4px 14px}
+    .num{font-size:28px}
+    .ref img{width:120px}
+  }
 </style>
-</head>
-<body>
+
 <div class="wrap">
 
   <header class="hero">
-    <div class="kicker">Spitz Pomer · Pauta de produção</div>
-    <h1>Os criativos que a gente quer</h1>
-    <p>Criativo novo é o que mais move o resultado e o que mais destrava a entrega das campanhas. Aqui está, em ordem de prioridade, o que precisamos que vocês produzam, com o porquê e o formato certo pra render.</p>
+    <div class="brand">Spitz Pomer &middot; Pauta de produção</div>
+    <h1>O que a gente quer que vocês <em>criem</em></h1>
+    <p>Criativo novo é o que mais move a venda e o que mais abre a entrega das campanhas. Esta é a lista, em ordem de prioridade, do que precisamos, com o porquê de cada um e o formato que faz render.</p>
   </header>
 
-  <div class="banner">
-    <b>Prioridade agora:</b> estamos na semana do feriado (20/11) e na Black November. O que mais urge é a leva 1 (oferta) e a leva 2 (clima do fim de semana). Quanto antes, melhor.
+  <div class="lead">
+    <p><b>Prioridade desta semana:</b> estamos no feriado de 20/11 e na Black November. O que mais urge é a leva 1 (oferta) e a leva 2 (clima do fim de semana). Quanto antes chegarem, melhor.</p>
   </div>
 
-  <h2>O que produzir, por prioridade</h2>
+  <div class="section-label">O que produzir, por prioridade</div>
 
-  <div class="card">
-    <div class="num">1</div>
-    <h3><span class="em">🎟️</span> Oferta e Black November <span class="pill">top vendas</span></h3>
-    <p class="why">Os criativos de <b>preço e cupom são os que mais vendem</b> na conta: "de R$104 por R$64" fez 293 vendas, "compre antecipado" fez 234 vendas com retorno de 26x, e o cupom aventureiro, 275 vendas.</p>
-    <ul>
-      <li>Vídeos curtos batendo no <b>desconto da Black November</b>, com âncora de preço ("de X por Y").</li>
-      <li>Senso de urgência ("só até…", "últimos dias").</li>
-      <li>Ideia do "compre antecipado e garanta o seu" (um dos maiores retornos da conta).</li>
-    </ul>
-    <div class="refs">
-      <span class="lbl">Exemplo que já vendeu</span>
-      <figure class="refimg">
-        <img src="capas_ref/oferta_104.jpg" alt="Criativo de oferta campeao" loading="lazy">
-        <figcaption>"De R$104,90 por R$68,18, lotes limitados, garanta antecipado no site." Oferta com âncora de preço, um dos campeões de venda.</figcaption>
-      </figure>
+  <article class="item">
+    <div class="item-in">
+      <div class="num">1</div>
+      <div>
+        <div class="eyebrow">Oferta e Black November</div>
+        <h3>Preço e desconto na frente <span class="tag">mais vende</span></h3>
+      </div>
+      <div class="item-body">
+        <p class="why">Os criativos de preço e cupom são os campeões de venda da conta. "De R$104 por R$64" fez <span class="big">293 vendas</span>, "compre antecipado" fez <span class="big">234 vendas</span> com retorno de 26x, e o cupom aventureiro, <span class="big">275 vendas</span>.</p>
+        <ul>
+          <li>Vídeos curtos batendo no <b>desconto da Black November</b>, com âncora de preço ("de X por Y").</li>
+          <li>Urgência real ("só até…", "lotes limitados").</li>
+          <li>A ideia do "compre antecipado e garanta o seu", que teve um dos maiores retornos.</li>
+        </ul>
+      </div>
+      <div class="ref">
+        <span class="cap">Exemplo que já vendeu</span>
+        <figure>
+          <img src="capas_ref/oferta_104.jpg" alt="Criativo de oferta campeao do Spitz">
+          <figcaption>"De R$104,90 por R$68,18, lotes limitados, garanta antecipado no site." Oferta com âncora de preço, um dos campeões de venda da conta.</figcaption>
+        </figure>
+      </div>
     </div>
-  </div>
+  </article>
 
-  <div class="card">
-    <div class="num">2</div>
-    <h3><span class="em">🌤️</span> Clima do fim de semana <span class="pill">toda semana</span></h3>
-    <p class="why">É o tema que mais se renova e <b>sempre performa</b>. Precisamos de material novo a cada semana, casado com a previsão real.</p>
-    <ul>
-      <li>Dia de sol: "o céu deu o sinal, bora sair de casa".</li>
-      <li>Dia de chuva: "tem área coberta, o parque funciona" (pouco explorado, tem espaço).</li>
-      <li>"A previsão é de aventura", usando o gráfico de tempo na tela.</li>
-    </ul>
-    <div class="refs">
-      <span class="lbl">Referência</span>
-      <a class="reflink" href="https://cardo-jpg.github.io/spitz-clima/" target="_blank" rel="noopener">☀️ Ver os campeões de clima</a>
+  <article class="item">
+    <div class="item-in">
+      <div class="num">2</div>
+      <div>
+        <div class="eyebrow">Clima do fim de semana</div>
+        <h3>A previsão vira convite <span class="tag">toda semana</span></h3>
+      </div>
+      <div class="item-body">
+        <p class="why">É o tema que mais se renova e <b>sempre performa</b>. Precisamos de material novo a cada semana, casado com a previsão real.</p>
+        <ul>
+          <li>Dia de sol: "o céu deu o sinal, bora sair de casa".</li>
+          <li>Dia de chuva: "tem área coberta, o parque funciona" (pouco explorado, tem espaço).</li>
+          <li>"A previsão é de aventura", usando o gráfico de tempo na tela.</li>
+        </ul>
+      </div>
+      <div class="ref">
+        <span class="cap">Referência</span>
+        <a class="reflink" href="https://cardo-jpg.github.io/spitz-clima/" target="_blank" rel="noopener">Ver os campeões de clima &rarr;</a>
+      </div>
     </div>
-  </div>
+  </article>
 
-  <div class="card">
-    <div class="num">3</div>
-    <h3><span class="em">📅</span> Feriado e férias de dezembro</h3>
-    <p class="why">Datas sempre vendem bem e criam urgência natural. O feriado de 20/11 agora, e dezembro/férias logo à frente.</p>
-    <ul>
-      <li>"Feriado sem plano? Vem pro Spitz."</li>
-      <li>"Férias de dezembro": o parque como o programa das crianças.</li>
-    </ul>
-    <div class="refs">
-      <span class="lbl">Exemplo que já vendeu</span>
-      <figure class="refimg">
-        <img src="capas_ref/feriado.jpg" alt="Criativo de feriado campeao" loading="lazy">
-        <figcaption>"Feriado chegando e você sem plano? Vem pro Spitz Pomer! Um dia inteiro de aventura pra família toda. Garanta seu Passaporte e aproveita o feriadão."</figcaption>
-      </figure>
+  <article class="item">
+    <div class="item-in">
+      <div class="num">3</div>
+      <div>
+        <div class="eyebrow">Feriado e férias</div>
+        <h3>Data que cria urgência</h3>
+      </div>
+      <div class="item-body">
+        <p class="why">Datas sempre vendem bem e dão urgência natural. O feriado de 20/11 agora, e as férias de dezembro logo à frente.</p>
+        <ul>
+          <li>"Feriado sem plano? Vem pro Spitz."</li>
+          <li>"Férias de dezembro": o parque como o programa das crianças.</li>
+        </ul>
+      </div>
+      <div class="ref">
+        <span class="cap">Exemplo que já vendeu</span>
+        <figure>
+          <img src="capas_ref/feriado.jpg" alt="Criativo de feriado do Spitz">
+          <figcaption>"Feriado chegando e você sem plano? Vem pro Spitz Pomer! Um dia inteiro de aventura pra família toda. Garanta seu Passaporte e aproveita o feriadão."</figcaption>
+        </figure>
+      </div>
     </div>
-  </div>
+  </article>
 
-  <div class="card">
-    <div class="num">4</div>
-    <h3><span class="em">🎢</span> Atração por dentro e adrenalina</h3>
-    <p class="why">Mostrar a experiência vende: "adrenalina garantida" fez 142 vendas (retorno 13x) e o combo de atrações, 118 vendas.</p>
-    <ul>
-      <li>POV de quem está na <b>tirolesa</b> e no <b>tubing</b> (câmera na pessoa).</li>
-      <li>Cada atração forte em destaque, uma por vídeo.</li>
-      <li>Novidades do parque, o que mudou, o que é novo.</li>
-    </ul>
-  </div>
+  <article class="item">
+    <div class="item-in">
+      <div class="num">4</div>
+      <div>
+        <div class="eyebrow">Atração por dentro</div>
+        <h3>Mostrar a experiência</h3>
+      </div>
+      <div class="item-body">
+        <p class="why">Mostrar a adrenalina vende: "adrenalina garantida" fez <span class="big">142 vendas</span> com retorno de 13x, e o combo de atrações, <span class="big">118 vendas</span>.</p>
+        <ul>
+          <li>POV de quem está na <b>tirolesa</b> e no <b>tubing</b>, câmera na pessoa.</li>
+          <li>Cada atração forte em destaque, uma por vídeo.</li>
+          <li>Novidades do parque: o que mudou, o que é novo.</li>
+        </ul>
+      </div>
+    </div>
+  </article>
 
-  <div class="card">
-    <div class="num">5</div>
-    <h3><span class="em">💬</span> Depoimento, UGC e Mirelle</h3>
-    <p class="why">Prova social converte. Vídeos de gente real e os conteúdos com a Mirelle têm bom retorno.</p>
-    <ul>
-      <li>Depoimentos curtos de visitantes ("o que achou?", reação na hora).</li>
-      <li>Mais conteúdo com a Mirelle apresentando o parque.</li>
-      <li>Família curtindo junta, do radical ao tranquilo.</li>
-    </ul>
-  </div>
+  <article class="item">
+    <div class="item-in">
+      <div class="num">5</div>
+      <div>
+        <div class="eyebrow">Depoimento e UGC</div>
+        <h3>Prova social de quem visita</h3>
+      </div>
+      <div class="item-body">
+        <p class="why">Gente real curtindo converte. Depoimentos curtos e conteúdo de influenciador têm bom retorno.</p>
+        <ul>
+          <li>Depoimentos de visitantes, reação na hora ("o que achou?").</li>
+          <li>Família curtindo junta, do radical ao tranquilo.</li>
+          <li>Conteúdo de influenciador apresentando o parque.</li>
+        </ul>
+      </div>
+    </div>
+  </article>
 
-  <h2>Regras técnicas (o que faz render)</h2>
+  <div class="section-label">Regras técnicas (o que faz render)</div>
   <div class="specs">
     <div class="spec"><b>Vertical 9:16</b><span>Feito pra Reels e Stories, que é onde a entrega acontece.</span></div>
-    <div class="spec"><b>Hook nos 3 primeiros segundos</b><span>Prende logo de cara, senão a pessoa passa.</span></div>
+    <div class="spec"><b>Hook nos 3 primeiros segundos</b><span>Prende logo de cara, senão a pessoa passa reto.</span></div>
     <div class="spec"><b>Legenda na tela</b><span>Dobra a retenção na conta. Texto grande e legível.</span></div>
-    <div class="spec"><b>Em lotes de 3 a 5</b><span>Quanto mais criativo novo girando, mais as campanhas conseguem entregar.</span></div>
-    <div class="spec"><b>Duração curta</b><span>Direto ao ponto, variando versões de 10 a 30 segundos.</span></div>
+    <div class="spec"><b>Em lotes de 3 a 5</b><span>Mais criativo novo girando é mais entrega pras campanhas.</span></div>
+    <div class="spec"><b>Duração curta</b><span>Direto ao ponto, versões de 10 a 30 segundos.</span></div>
     <div class="spec"><b>Imagem limpa</b><span>Foco nas atrações e nas pessoas se divertindo.</span></div>
   </div>
 
-  <div class="cad" style="margin-top:16px">
-    <h3>A cadência ideal</h3>
-    <p>Um lote novo (3 a 5 vídeos) por semana mantém as campanhas sempre com material fresco. É o que vai sustentar e aumentar as vendas daqui pra frente. O criativo é o combustível: sem material novo, a entrega satura e o resultado cai.</p>
+  <div class="cadence">
+    <div class="eyebrow">A cadência ideal</div>
+    <h3>Um lote novo por semana</h3>
+    <p>Três a cinco vídeos novos por semana mantêm as campanhas sempre com material fresco. É o que sustenta e aumenta as vendas daqui pra frente: o criativo é o combustível, e sem material novo a entrega satura e o resultado cai.</p>
   </div>
 
-  <footer>Pauta de produção de criativos · Spitz Pomer</footer>
+  <footer>Pauta de produção de criativos &middot; Spitz Pomer</footer>
 </div>
-</body>
-</html>
