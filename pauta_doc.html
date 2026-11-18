@@ -54,6 +54,9 @@
   .reflink{display:inline-flex;align-items:center;gap:5px;font-size:12.5px;font-weight:600;text-decoration:none;
     color:var(--sky-ink);background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:5px 11px}
   .reflink:hover{border-color:var(--sky)}
+  .refimg{margin:0;max-width:280px}
+  .refimg img{width:100%;border-radius:12px;display:block;border:1px solid var(--line)}
+  .refimg figcaption{font-size:12.5px;color:var(--muted);margin-top:7px;line-height:1.45}
   .pill{display:inline-block;font-size:12px;font-weight:700;color:#fff;background:var(--sun);
     border-radius:999px;padding:3px 10px;margin-left:4px;vertical-align:middle}
   .specs{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
@@ -93,10 +96,11 @@
       <li>Ideia do "compre antecipado e garanta o seu" (um dos maiores retornos da conta).</li>
     </ul>
     <div class="refs">
-      <span class="lbl">Exemplos que já venderam</span>
-      <a class="reflink" href="https://fb.me/2cVfnntIHkRylx8" target="_blank" rel="noopener">▶ De R$104 por R$64</a>
-      <a class="reflink" href="https://fb.me/1Z1ngvFUpfp9HTp" target="_blank" rel="noopener">▶ Compre antecipado</a>
-      <a class="reflink" href="https://fb.me/28Y8sREuLdFWpgn" target="_blank" rel="noopener">▶ Cupom aventureiro</a>
+      <span class="lbl">Exemplo que já vendeu</span>
+      <figure class="refimg">
+        <img src="capas_ref/oferta_104.jpg" alt="Criativo de oferta campeao" loading="lazy">
+        <figcaption>"De R$104,90 por R$68,18, lotes limitados, garanta antecipado no site." Oferta com âncora de preço, um dos campeões de venda.</figcaption>
+      </figure>
     </div>
   </div>
 
@@ -125,7 +129,10 @@
     </ul>
     <div class="refs">
       <span class="lbl">Exemplo que já vendeu</span>
-      <a class="reflink" href="https://fb.me/1VX69JXwvlxz1v5" target="_blank" rel="noopener">▶ Feriado no calendário</a>
+      <figure class="refimg">
+        <img src="capas_ref/feriado.jpg" alt="Criativo de feriado campeao" loading="lazy">
+        <figcaption>"Feriado chegando e você sem plano? Vem pro Spitz Pomer! Um dia inteiro de aventura pra família toda. Garanta seu Passaporte e aproveita o feriadão."</figcaption>
+      </figure>
     </div>
   </div>
 
@@ -138,12 +145,6 @@
       <li>Cada atração forte em destaque, uma por vídeo.</li>
       <li>Novidades do parque, o que mudou, o que é novo.</li>
     </ul>
-    <div class="refs">
-      <span class="lbl">Exemplos que já venderam</span>
-      <a class="reflink" href="https://fb.me/2nvgBOfBfbz8UYQ" target="_blank" rel="noopener">▶ Adrenalina garantida</a>
-      <a class="reflink" href="https://fb.me/CPsMrXzt9gQGSID" target="_blank" rel="noopener">▶ Combo de atrações</a>
-      <a class="reflink" href="https://fb.me/28tFzuamD7AyaXG" target="_blank" rel="noopener">▶ "Ninguém te contou"</a>
-    </div>
   </div>
 
   <div class="card">
@@ -155,10 +156,6 @@
       <li>Mais conteúdo com a Mirelle apresentando o parque.</li>
       <li>Família curtindo junta, do radical ao tranquilo.</li>
     </ul>
-    <div class="refs">
-      <span class="lbl">Exemplo que já vendeu</span>
-      <a class="reflink" href="https://fb.me/2JqF2ngyd6zjExh" target="_blank" rel="noopener">▶ Vídeo da Mirelle</a>
-    </div>
   </div>
 
   <h2>Regras técnicas (o que faz render)</h2>
